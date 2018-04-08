@@ -1,0 +1,12 @@
+ <ul class="list-group">
+    <li class="list-group-item" *ngFor="let item of toDoList">{{item}} 
+        <input type="checkbox" class="float-right" (click)="removeItem(item)">
+    </li>
+    <li class="list-group-item">
+      <button type="button" class="btn btn-primary" (click)="add()">Add</button>
+      </li>
+</ul>
+<div class="input-group mb-3" *ngIf="adding">
+    <input type="text" class="form-control" [(ngModel)]="newItem">
+    <button type="button" class="btn btn-success" [disabled]="!newItem" (click)="saveItem()">Save</button>
+</div>
